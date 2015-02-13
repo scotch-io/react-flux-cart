@@ -15,14 +15,14 @@ var FluxCart = React.createClass({
   },
 
   // Remove item from Cart via Actions
-  removeFromCart: function(sku){
+  removeFromCart: function(sku, cartVisible){
     FluxCartActions.removeFromCart(sku);
-    FluxCartActions.updateCartVisible(false);
+    FluxCartActions.updateCartVisible(cartVisible);
   },
 
   // Render cart view
   render: function() {
-    var self = this, products = this.props.products;
+    var self = this, products = this.props.products, productsCount = Object.keys(self.props.products).length;
     return (
       <div className={"flux-cart " + (this.props.visible ? 'active' : '')}>
         <div className="mini-cart">
@@ -34,14 +34,14 @@ var FluxCart = React.createClass({
                   <h1 className="name">{products[product].name}</h1>
                   <p className="type">{products[product].type} x {products[product].quantity}</p>
                   <p className="price">${(products[product].price * products[product].quantity).toFixed(2)}</p>
-                  <button type="button" className="remove-item" onClick={self.removeFromCart.bind(self, product)}>Remove</button>
+                  <button type="button" className="remove-item" onClick={self.removeFromCart.bind(self, product, productsCount > 1)}>Remove</button>
                 </li>
               )
             })}
           </ul>
           <span className="total">Total: ${this.props.total}</span>
         </div>
-        <button type="button" className="view-cart" onClick={this.openCart} disabled={Object.keys(this.props.products).length > 0 ? "" : "disabled"}>View Cart ({this.props.count})</button>
+        <button type="button" className="view-cart" onClick={this.openCart} disabled={productsCount > 0 ? "" : "disabled"}>View Cart ({this.props.count})</button>
       </div>
     );
   },
