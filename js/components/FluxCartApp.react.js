@@ -30,7 +30,7 @@ var FluxCartApp = React.createClass({
     CartStore.addChangeListener(this._onChange);
   },
 
-  // Remove change listers from stores
+  // Remove change listeners from stores
   componentWillUnmount: function() {
     ProductStore.removeChangeListener(this._onChange);
     CartStore.removeChangeListener(this._onChange);
