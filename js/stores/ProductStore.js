@@ -51,7 +51,6 @@ var ProductStore = _.extend({}, EventEmitter.prototype, {
 // Register callback with AppDispatcher
 AppDispatcher.register(function(payload) {
   var action = payload.action;
-  var text;
 
   switch(action.actionType) {
 
