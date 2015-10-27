@@ -29,4 +29,8 @@ There will be plenty adjustments in the future. Below are those in the picture:
 * Preprocess styles with Sass.
 * Gulp for translating Sass and minifying images.
 * Webpack Dev Server instead of http-server.
+<<<<<<< HEAD
 * Livereload.
+=======
+* Livereload.
+>>>>>>> 3bf64ff10b8a509732f5d214ff0fd990d1674e48
