@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var ProductData = require('./ProductData');
 var CartAPI = require('./utils/CartAPI')
 var FluxCartApp = require('./components/FluxCartApp.react');
@@ -10,7 +11,7 @@ ProductData.init();
 CartAPI.getProductData();
 
 // Render FluxCartApp Controller View
-React.render(
+ReactDOM.render(
   <FluxCartApp />,
   document.getElementById('flux-cart')
 );
