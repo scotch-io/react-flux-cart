@@ -20,3 +20,13 @@ This forked branch has additional features below:
 3. `npm install`
 4. `npm start` to build the bundle with Webpack, and power the server.
 5. Visit `localhost: 3000` and begin shopping.
+
+## Outlook
+
+There will be plenty adjustments in the future. Below are those in the picture:
+
+* ES2015 (ECMAScript 6) migration.
+* Preprocess styles with Sass.
+* Gulp for translating Sass and minifying images.
+* Webpack Dev Server instead of http-server.
+* Livereload.
