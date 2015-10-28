@@ -10,12 +10,12 @@ This forked branch has additional features below:
 * Up-to-date React 0.14.0 migrated, including seperated ReactDOM package.
 * All JavaScript bundled with Webpack.
 * Babel instead of JSX transformer introduced.
-* Underscore.js discarded. It was total overkill for just object merging. Instead, `react/lib/Object.assign` is introduced.
+* Underscore.js discarded. It was total overkill for just object merging. Instead, `react/lib/Object.assign` is used.
 * `http-server` for powering the server.
 
 **Updated:**
 
-* `http-server` deprecated, `webpack-dev-server` instroduced instead.
+* `http-server` deprecated, `webpack-dev-server` introduced instead.
 * `react-hot-loader` introduced as a livereload watcher.
 * `bundle.js` compressed with `uglify-loader`, size shrunk considerably.
 * Preprocessing styles in Sass. Related packages are added to compile Sass into `bundle.js`.
