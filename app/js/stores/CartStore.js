@@ -39,7 +39,7 @@ var CartStore = assign({}, EventEmitter.prototype, {
   getCartTotal: function() {
     var total = 0;
     for (var product in _products) {
-      if (_products.hasOwnProperty(product)){
+      if (_products.hasOwnProperty(product)) {
         total += _products[product].price * _products[product].quantity;
       }
     }

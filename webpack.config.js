@@ -1,12 +1,46 @@
+var path    = require('path');
+var webpack = require('webpack');
+
 module.exports = {
-  entry: './app/js/App.js',
+
+  entry: [
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    './app/js/App.js'
+  ],
+
   output: {
-    filename: 'public/bundle.js'
+    path: path.join(__dirname, 'public'),
+    filename: 'bundle.js'
   },
+
+  devServer: {
+    contentBase: './public',
+    hot: true
+  },
+
   module: {
     loaders: [
-      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ }
+      {
+        test: /\.js$/,
+        loaders: ['react-hot', 'babel-loader'],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
+      }
     ]
-  }
+  },
+
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, './app/scss/')]
+  },
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.UglifyJsPlugin({ minimize: true }),
+    new webpack.NoErrorsPlugin()
+  ]
+
 };

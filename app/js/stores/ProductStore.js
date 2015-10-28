@@ -17,7 +17,6 @@ function setSelected(index) {
   _selected = _product.variants[index];
 }
 
-
 // Extend ProductStore with EventEmitter to add eventing capabilities
 var ProductStore = assign({}, EventEmitter.prototype, {
 
@@ -49,7 +48,7 @@ var ProductStore = assign({}, EventEmitter.prototype, {
 });
 
 // Register callback with AppDispatcher
-AppDispatcher.register(function(payload) {
+AppDispatcher.register(function (payload) {
   var action = payload.action;
   var text;
 
