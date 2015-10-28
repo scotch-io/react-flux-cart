@@ -34,7 +34,14 @@ This forked branch has additional features below:
 There will be plenty adjustments in the future. Below are those in the picture:
 
 * ES2015 (ECMAScript 6) migration.
+<<<<<<< HEAD
 * ~~Preprocess styles with Sass.~~ **Done.**
 * ~~Gulp for translating Sass and minifying images.~~ **Canceled.**
 * ~~Webpack Dev Server instead of http-server.~~ **Done.**
 * ~~Livereload.~~ **Done.**
+=======
+* Preprocess styles with Sass.
+* Gulp for translating Sass and minifying images.
+* Webpack Dev Server instead of http-server.
+* Livereload.
+>>>>>>> 0fe8045652efb9d1a36e23964b30f1427858f73e
