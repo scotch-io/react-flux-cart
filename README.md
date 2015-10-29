@@ -7,7 +7,7 @@ react-flux-cart
 
 This forked branch has additional features below:
 
-* Up-to-date React 0.14.0 migrated, including seperated ReactDOM package.
+* Up-to-date React v0.14 migrated, including seperated ReactDOM package and tons of new features as well as deprecations. If you are still using v0.12 as the original project, please check out the upgrade guides of [v0.13](https://facebook.github.io/react/blog/2015/03/10/react-v0.13.html) and [v0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html).
 * All JavaScript bundled with Webpack.
 * Babel instead of JSX transformer introduced.
 * Underscore.js discarded. It was total overkill for just object merging. Instead, `react/lib/Object.assign` is used.
