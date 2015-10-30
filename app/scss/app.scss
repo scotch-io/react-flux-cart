@@ -1,23 +1,17 @@
 @import './_mixin.scss';
 
-@font-face {
-  font-family: 'myFont';
-  src: url("../font/font.woff") format('woff');
-}
-
 html,
 body {
   height: 100%;
 }
 
 body {
-  font-family: 'myFont';
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
   @include font-size(14px);
   margin: 0;
   padding: 0;
   color: #2c3e50;
-  background-image: url("../img/pattern.png");
-  background-repeat: repeat;
+  background-color: #e67e22;
 }
 
 body * {

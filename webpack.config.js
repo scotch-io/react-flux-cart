@@ -29,10 +29,6 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass']
-      },
-      {
-        test: /\.(woff|png)$/,
-        loader: 'url-loader?limit=100000'
       }
     ]
   },
