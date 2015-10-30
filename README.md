@@ -1,40 +1,34 @@
-react-flux-cart
+flux-webpack-boilerplate
 ===============
 
 ## Overview
 
-**Original branch** was coded for the tutorial by [@kenwheeler](https://twitter.com/ken_wheeler): [Create a Shopping Cart Using React.js and Flux](https://scotch.io/tutorials/creating-a-simple-shopping-cart-with-react-js-and-flux).
+This is a boilerplate for [Flux](https://facebook.github.io/flux/) and [Webpack](https://webpack.github.io/) workflow of my best practice.
 
-This forked branch has additional features below:
+The Flux application part was coded by [@kenwheeler](https://twitter.com/ken_wheeler) for the tutorial: [Create a Shopping Cart Using React.js and Flux](https://scotch.io/tutorials/creating-a-simple-shopping-cart-with-react-js-and-flux). I used it as a simple Flux boilerplate, but the highlight of this project is all about Webpack workflow. You can use it as a seed project to build your own Flux app.
 
-* Up-to-date React v0.14 migrated, including seperated ReactDOM package and tons of new features as well as deprecations. If you are still using v0.12 as the original project, please check out the upgrade guides of [v0.13](https://facebook.github.io/react/blog/2015/03/10/react-v0.13.html) and [v0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html).
-* All JavaScript bundled with Webpack.
-* Babel instead of JSX transformer introduced.
-* Underscore.js discarded. It was total overkill for just object merging. Instead, `react/lib/Object.assign` is used.
-* `http-server` for powering the server.
+This boilerplate has features as below so far:
 
-**Updated:**
-
-* `http-server` deprecated, `webpack-dev-server` introduced instead.
-* `react-hot-loader` introduced as a livereload watcher.
-* `bundle.js` compressed with `uglify-loader`, size shrunk considerably.
-* Preprocessing styles in Sass. Related packages are added to compile Sass into `bundle.js`.
+* Up-to-date React **v0.14** migrated, including seperated ReactDOM package and tons of new features as well as deprecations. Please check out the upgrade guide of [v0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html).
+* **Webpack** bundler.
+* **Babel** instead of JSX transformer introduced.
+* **Webpack-dev-server** serving and hot swapping.
+* **React-hot-loader** livereload.
+* **Uglifying** the bundled JavaScript.
+* Preprocessing styles in **Sass**. Required resources such as images and font files are bundled altogether into JavaScript. *Note that I use .woff font format and it is transpiled into inline base64 string.*
 
 ## Install
 
 1. Make sure you have *npm* and maybe *webpack* installed globally.
-2. Download [zip](https://github.com/jasonlam0619/react-flux-cart/archive/master.zip) or `git clone git@github.com:jasonlam0619/react-flux-cart.git` onto your computer.
-2. `cd react-flux-cart`
+2. Download [zip](https://github.com/jasonlam0619/flux-webpack-boilerplate/archive/master.zip) or `git clone git@github.com:jasonlam0619/flux-webpack-boilerplate.git` onto your computer.
+2. `cd flux-webpack-boilerplate-master`
 3. `npm install`
 4. `npm start` to build the bundle with Webpack, and power the server.
-5. Visit `localhost: 8080` and begin shopping.
+5. Visit `localhost: 8080`.
 
 ## Outlook
 
 There will be plenty adjustments in the future. Below are those in the picture:
 
 * ES2015 (ECMAScript 6) migration.
-* ~~Preprocess styles with Sass.~~ **Done.**
-* ~~Gulp for translating Sass and minifying images.~~ **Canceled.**
-* ~~Webpack Dev Server instead of http-server.~~ **Done.**
-* ~~Livereload.~~ **Done.**
+* File-loader for Webpack.
