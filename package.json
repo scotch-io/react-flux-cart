@@ -1,7 +1,7 @@
 {
-  "name": "react-flux-cart",
+  "name": "flux-webpack-boilerplate",
   "version": "0.0.1",
-  "description": "A shopping cart component built with react, flux and webpack.",
+  "description": "A boilerplate for Flux and Webpack of my best practice.",
   "dependencies": {
     "flux": "^2.0.1",
     "react": "^0.14.0",
@@ -18,6 +18,7 @@
     "sass-loader": "^3.1.1",
     "style-loader": "^0.13.0",
     "uglify-loader": "^1.2.0",
+    "url-loader": "^0.5.6",
     "webpack": "^1.10.1",
     "webpack-dev-server": "^1.12.1"
   },
