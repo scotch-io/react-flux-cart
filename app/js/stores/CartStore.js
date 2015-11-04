@@ -1,7 +1,7 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var FluxCartConstants = require('../constants/FluxCartConstants');
-var _ = require('underscore');
+var assign = require('react/lib/Object.assign');
 
 // Define initial data points
 var _products = {}, _cartVisible = false;
@@ -9,7 +9,7 @@ var _products = {}, _cartVisible = false;
 // Add product to cart
 function add(sku, update) {
   update.quantity = sku in _products ? _products[sku].quantity + 1 : 1;
-  _products[sku] = _.extend({}, _products[sku], update)
+  _products[sku] = assign({}, _products[sku], update)
 }
 
 // Set cart visibility
@@ -23,7 +23,7 @@ function removeItem(sku) {
 }
 
 // Extend Cart Store with EventEmitter to add eventing capabilities
-var CartStore = _.extend({}, EventEmitter.prototype, {
+var CartStore = assign({}, EventEmitter.prototype, {
 
   // Return cart items
   getCartItems: function() {
@@ -38,8 +38,8 @@ var CartStore = _.extend({}, EventEmitter.prototype, {
   // Return cart cost total
   getCartTotal: function() {
     var total = 0;
-    for(product in _products){
-      if(_products.hasOwnProperty(product)){
+    for (var product in _products) {
+      if (_products.hasOwnProperty(product)) {
         total += _products[product].price * _products[product].quantity;
       }
     }

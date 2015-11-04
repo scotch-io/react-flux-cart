@@ -1,7 +1,7 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var FluxCartConstants = require('../constants/FluxCartConstants');
-var _ = require('underscore');
+var assign = require('react/lib/Object.assign');
 
 // Define initial data points
 var _product = {}, _selected = null;
@@ -17,9 +17,8 @@ function setSelected(index) {
   _selected = _product.variants[index];
 }
 
-
 // Extend ProductStore with EventEmitter to add eventing capabilities
-var ProductStore = _.extend({}, EventEmitter.prototype, {
+var ProductStore = assign({}, EventEmitter.prototype, {
 
   // Return Product data
   getProduct: function() {
@@ -49,7 +48,7 @@ var ProductStore = _.extend({}, EventEmitter.prototype, {
 });
 
 // Register callback with AppDispatcher
-AppDispatcher.register(function(payload) {
+AppDispatcher.register(function (payload) {
   var action = payload.action;
   var text;
 
