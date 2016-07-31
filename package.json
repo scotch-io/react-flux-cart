@@ -5,21 +5,28 @@
   "main": "js/app.js",
   "dependencies": {
     "flux": "^2.0.0",
-    "react": "^0.12.0",
-    "underscore": "^1.7.0"
+    "keymirror": "^0.1.1",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "uglifyjs": "^2.4.10",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "browserify": "~6.2.0",
-    "envify": "~3.0.0",
-    "react": "^0.12.0",
-    "reactify": "^0.15",
-    "watchify": "~2.1.0"
+    "browserify": "~13.1.0",
+    "envify": "~3.4.1",
+    "react": "^15.3.0",
+    "reactify": "^1.1",
+    "watchify": "~3.7.0"
   },
   "scripts": {
     "start": "watchify -o js/bundle.js -v -d .",
-    "build": "browserify . | uglifyjs -cm > js/bundle.min.js"
+    "build": "browserify . | uglifyjs -cm > js/bundle.min.js",
+    "test": "jest"
   },
   "author": "Ken Wheeler",
+  "contributors": [
+    "vichu1988"
+  ],
   "browserify": {
     "transform": [
       "reactify",

@@ -16,64 +16,49 @@ function loadProductData(data) {
 function setSelected(index) {
   _selected = _product.variants[index];
 }
-
-
 // Extend ProductStore with EventEmitter to add eventing capabilities
 var ProductStore = _.extend({}, EventEmitter.prototype, {
-
   // Return Product data
-  getProduct: function() {
+  getProduct: function () {
     return _product;
   },
-
   // Return selected Product
-  getSelected: function(){
+  getSelected: function () {
     return _selected;
   },
-
   // Emit Change event
-  emitChange: function() {
+  emitChange: function () {
     this.emit('change');
   },
-
   // Add change listener
-  addChangeListener: function(callback) {
+  addChangeListener: function (callback) {
     this.on('change', callback);
   },
-
   // Remove change listener
-  removeChangeListener: function(callback) {
+  removeChangeListener: function (callback) {
     this.removeListener('change', callback);
   }
-
 });
 
 // Register callback with AppDispatcher
-AppDispatcher.register(function(payload) {
+AppDispatcher.register(function (payload) {
   var action = payload.action;
   var text;
-
-  switch(action.actionType) {
-
+  switch (action.actionType) {
     // Respond to RECEIVE_DATA action
     case FluxCartConstants.RECEIVE_DATA:
       loadProductData(action.data);
       break;
-
     // Respond to SELECT_PRODUCT action
     case FluxCartConstants.SELECT_PRODUCT:
       setSelected(action.data);
       break;
-
     default:
       return true;
   }
-
   // If action was responded to, emit change event
   ProductStore.emitChange();
-
   return true;
-
 });
 
 module.exports = ProductStore;
