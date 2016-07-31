@@ -5,14 +5,11 @@
   "main": "js/app.js",
   "dependencies": {
     "flux": "^2.0.0",
-    "jest": "^14.0.1",
     "keymirror": "^0.1.1",
     "react": "^15.3.0",
-    "react-addons-test-utils": "^15.3.0",
     "react-dom": "^15.3.0",
-    "react-test-utils": "0.0.1",
-    "react-tools": "^0.13.3",
-    "underscore": "^1.7.0"
+    "uglifyjs": "^2.4.10",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "browserify": "~13.1.0",
@@ -26,13 +23,10 @@
     "build": "browserify . | uglifyjs -cm > js/bundle.min.js",
     "test": "jest"
   },
-  "jest": {
-    "scriptPreprocessor": "<rootDir>/preprocessor.js",
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react"
-    ]
-  },
   "author": "Ken Wheeler",
+  "contributors": [
+    "vichu1988"
+  ],
   "browserify": {
     "transform": [
       "reactify",
