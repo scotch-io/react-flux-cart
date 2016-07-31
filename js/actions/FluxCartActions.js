@@ -5,7 +5,7 @@ var FluxCartConstants = require('../constants/FluxCartConstants');
 var FluxCartActions = {
 
   // Receive inital product data
-  receiveProduct: function(data) {
+  receiveProduct: function (data) {
     AppDispatcher.handleAction({
       actionType: FluxCartConstants.RECEIVE_DATA,
       data: data
@@ -13,7 +13,7 @@ var FluxCartActions = {
   },
 
   // Set currently selected product variation
-  selectProduct: function(index) {
+  selectProduct: function (index) {
     AppDispatcher.handleAction({
       actionType: FluxCartConstants.SELECT_PRODUCT,
       data: index
@@ -21,7 +21,7 @@ var FluxCartActions = {
   },
 
   // Add item to cart
-  addToCart: function(sku, update) {
+  addToCart: function (sku, update) {
     AppDispatcher.handleAction({
       actionType: FluxCartConstants.CART_ADD,
       sku: sku,
@@ -30,7 +30,7 @@ var FluxCartActions = {
   },
 
   // Remove item from cart
-  removeFromCart: function(sku) {
+  removeFromCart: function (sku) {
     AppDispatcher.handleAction({
       actionType: FluxCartConstants.CART_REMOVE,
       sku: sku
@@ -38,7 +38,7 @@ var FluxCartActions = {
   },
 
   // Update cart visibility status
-  updateCartVisible: function(cartVisible) {
+  updateCartVisible: function (cartVisible) {
     AppDispatcher.handleAction({
       actionType: FluxCartConstants.CART_VISIBLE,
       cartVisible: cartVisible

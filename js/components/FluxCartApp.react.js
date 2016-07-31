@@ -1,8 +1,8 @@
 var React = require('react');
 var CartStore = require('../stores/CartStore');
 var ProductStore = require('../stores/ProductStore');
-var FluxProduct = require('./FluxProduct.react');
-var FluxCart = require('./FluxCart.react');
+var FluxProduct = require('./FluxProduct.react.js');
+var FluxCart = require('./FluxCart.react.js');
 
 // Method to retrieve state from Stores
 function getCartState() {
@@ -20,34 +20,36 @@ function getCartState() {
 var FluxCartApp = React.createClass({
 
   // Get initial state from stores
-  getInitialState: function() {
+  getInitialState: function () {
     return getCartState();
   },
 
   // Add change listeners to stores
-  componentDidMount: function() {
+  componentDidMount: function () {
     ProductStore.addChangeListener(this._onChange);
     CartStore.addChangeListener(this._onChange);
   },
 
   // Remove change listeners from stores
-  componentWillUnmount: function() {
+  componentWillUnmount: function () {
     ProductStore.removeChangeListener(this._onChange);
     CartStore.removeChangeListener(this._onChange);
   },
 
   // Render our child components, passing state via props
-  render: function() {
-  	return (
+  render: function () {
+    return (
       <div className="flux-cart-app">
-        <FluxCart products={this.state.cartItems} count={this.state.cartCount} total={this.state.cartTotal} visible={this.state.cartVisible} />
-        <FluxProduct product={this.state.product} cartitems={this.state.cartItems} selected={this.state.selectedProduct} />
+        <FluxCart products={this.state.cartItems} count={this.state.cartCount} total={this.state.cartTotal}
+                  visible={this.state.cartVisible}/>
+        <FluxProduct product={this.state.product} cartitems={this.state.cartItems}
+                     selected={this.state.selectedProduct}/>
       </div>
-  	);
+    );
   },
 
   // Method to setState based upon Store changes
-  _onChange: function() {
+  _onChange: function () {
     this.setState(getCartState());
   }
 
